@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# **_React App with Redux-Saga_**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web app bán hàng được tạo bởi ReactJS + Redux + Redux-Saga.
 
-## Available Scripts
+## `Một vài chức năng chính`
 
-In the project directory, you can run:
+- Trang chủ và trang **_Sản phẩm_** hiển thị danh sách sản phẩm (ban đầu rỗng vì chưa có dữ liệu)
+- Thanh **_Navbar_** để điều hướng đến các trang, đồng thời thể hiện **_số lượng sản phẩm khác nhau_** đang có trong **_Giỏ hàng của tôi_** (sản phẩm cùng loại nhưng nhiều cái thì vẫn tính là 1 sản phẩm)
+- Trang thêm sản phẩm mới gồm một **_Form_** để nhập dữ liệu
+- Trang _**Giỏ hàng của tôi**_ hiển thị **_sản phẩm của cùng một đơn hàng_** (đơn hàng chưa được thanh toán thì các sản phẩm được thêm vào giỏ sau đó mặc định thuộc cùng một đơn hàng. Ban đầu rỗng vì chưa có dữ liệu)
+- Trang _**Đơn hàng**_ gồm một **_Bảng_** hiển thị danh sách các đơn hàng (ban đầu rỗng vì chưa có dữ liệu)
+- Trang _**Chi tiết đơn hàng**_ gồm một **_Bảng_** hiển thị thông tin chi tiết của một đơn hàng
+- Trong trang **_Giỏ hàng của tôi_**, sau khi nhấn nút '_THANH TOÁN_' thì đơn hàng sẽ được tạo mới, và giỏ hàng được tự động làm rỗng
+- Dữ liệu các sản phẩm, giỏ hàng, đơn hàng và chi tiết đơn hàng không bị xoá khi tắt web server 
 
-### `npm start`
+## `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Trong thư mục dự án, dùng lệnh **npm start** để chạy ứng dụng.\
+Ứng dụng mặc định chạy ở [http://localhost:3000](http://localhost:3000).

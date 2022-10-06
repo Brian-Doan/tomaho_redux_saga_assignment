@@ -1,38 +1,118 @@
 .App {
   text-align: center;
+  padding: 0 200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #000;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-title {
+  height: 48px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-body {
+  height: 210px;
+  margin-bottom: 0.5rem;
+}
+
+.add-to-cart-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+footer p {
+  background: #eee;
+  color: #888;
+  margin: 20px 0 0;
+  padding: 0.5rem 0;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Extra small devices */
+@media screen and (max-width: 576px) {
+  .App {
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-title {
+    font-size: 1.1rem;
+  }
+
+  .card-body {
+    height: 180px;
+    padding: 8px;
+  }
+}
+
+/* Small devices */
+@media screen and (min-width: 576px) {
+  .App {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .card-body {
+    height: 180px;
+    padding: 8px;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+}
+
+/* Medium devices */
+@media screen and (min-width: 768px) {
+  .App {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* Large devices */
+@media screen and (min-width: 992px) {
+  .App {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+}
+
+/* Extra large devices */
+@media screen and (min-width: 1200px) {
+  .App {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+}
+
+/* Extra extra large devices */
+@media screen and (min-width: 1400px) {
+  .App {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    text-align: left;
   }
 }
