@@ -1,6 +1,6 @@
 # **_React App with Redux-Saga_**
 
-Web app bán hàng được tạo bởi ReactJS + Redux + Redux-Saga.
+Web app được tạo bởi ReactJS + Redux + Redux-Saga.
 
 ## `Một vài chức năng chính`
 
