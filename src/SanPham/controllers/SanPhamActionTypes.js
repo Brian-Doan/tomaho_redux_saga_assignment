@@ -1,1 +1,2 @@
+export const GET_NEW_SAN_PHAM = 'GET_NEW_SAN_PHAM';
 export const CREATE_NEW_SAN_PHAM = 'CREATE_NEW_SAN_PHAM';

@@ -1,0 +1,26 @@
+footer {
+  background: #eee;
+  color: #888;
+  font-size: 1.2rem;
+  margin: 20px 0 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    a {
+      &:hover {
+        color: #f16522;
+      }
+    }
+  }
+}

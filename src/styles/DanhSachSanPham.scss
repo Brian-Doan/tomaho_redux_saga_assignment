@@ -1,0 +1,80 @@
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .header__title {
+    flex: 3;
+
+    h1 {
+      font-size: 1.6rem;
+      text-align: left;
+    }
+  }
+
+  .header__add-product-button {
+    flex: 1;
+
+    button {
+      &::before {
+        content: '+';
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .header__container {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .header__add-product-button {
+      button {
+        border-radius: 999px;
+        width: 120px;
+        height: 30px;
+        &::before {
+          content: '+ Thêm sản phẩm';
+        }
+      }
+    }
+  }
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .product-card {
+    background-color: #fff;
+    width: 48%;
+    height: 340px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .product-card__add-to-cart-form {
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .product-card {
+      height: 360px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .product-card {
+      width: 23%;
+      height: 340px;
+    }
+  }
+}

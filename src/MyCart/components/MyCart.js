@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table, Button, Container, Row, Col } from 'react-bootstrap';
@@ -7,17 +7,9 @@ import uuid from 'react-uuid';
 import * as DonHangActions from '../../DonHang/controllers/DonHangActionTypes';
 import { calculateMyCart, recalculateItemTrueQuantity } from '../../utils';
 
-const donHangStorageKey = 'DON_HANG_STORAGE_KEY';
-
 const MyCart = () => {
   const dispatch = useDispatch();
-  const tableHeader = [
-    'Hình ảnh',
-    'Tên sản phẩm',
-    'Số lượng',
-    'Đơn giá',
-    'Thành tiền',
-  ];
+  const tableHeader = ['Tên sản phẩm', 'Đơn giá', 'Số lượng', 'Thành tiền'];
 
   /**
    * Lấy state từ Reducer
@@ -25,25 +17,14 @@ const MyCart = () => {
   const myCart = useSelector((state) => state.MyCartReducer.myCart);
 
   /**
-   * Local states
+   * Tính toán số lượng thực tế của các sản phẩm trong giỏ hàng
    */
-  const [donHangStorage, setDonHangStorage] = useState(
-    JSON.parse(localStorage.getItem(donHangStorageKey)) || []
-  );
-
-  useEffect(() => {
-    localStorage.setItem(donHangStorageKey, JSON.stringify(donHangStorage));
-  }, [donHangStorage]);
+  const cartItemTrueQuantity = recalculateItemTrueQuantity(myCart);
 
   /**
    * Tính toán tiền và thuế của các sản phẩm trong giỏ hàng
    */
   const { tongTruocThue, tongThue, tongThanhTien } = calculateMyCart(myCart);
-
-  /**
-   * Tính toán số lượng thực tế của các sản phẩm trong giỏ hàng
-   */
-  const cartItemTrueQuantity = recalculateItemTrueQuantity(myCart);
 
   /**
    * Xử lý logic
@@ -53,7 +34,7 @@ const MyCart = () => {
     const id = uuid().split('-')[0];
 
     dispatch({
-      type: DonHangActions.CREATE_NEW_DON_HANG,
+      type: DonHangActions.GET_NEW_DON_HANG,
       payload: {
         id,
         ten: `Đơn hàng ${id}`,
@@ -63,27 +44,23 @@ const MyCart = () => {
       },
     });
 
-    setDonHangStorage((prev) => [
-      ...prev,
-      {
-        id,
-        ten: `Đơn hàng ${id}`,
-        tongTruocThue,
-        tongThue,
-        tongThanhTien,
-      },
-    ]);
+    window.scrollTo(0, 0);
   };
 
   return (
-    <div className='border-top pt-2'>
-      <h3>MY CART</h3>
+    <div className='pt-2 table-wrapper'>
+      <div className='page-header'>
+        <div className='header__title'>
+          <h1>MY CART</h1>
+        </div>
+      </div>
 
       {/* Bảng thống kê */}
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
+            <th></th>
             {tableHeader.map((header) => (
               <th key={header}>{header}</th>
             ))}

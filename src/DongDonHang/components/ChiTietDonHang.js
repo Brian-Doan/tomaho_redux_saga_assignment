@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 
 import { calculateMyCart } from '../../utils';
+import '../../styles/ChiTietDonHang.scss';
 
 const ChiTietDonHang = () => {
   const { id } = useParams();
@@ -31,15 +32,19 @@ const ChiTietDonHang = () => {
     calculateMyCart(chiTietDonHang);
 
   return (
-    <div className='border-top pt-2'>
+    <div className='pt-2 table-wrapper'>
       {/* Header */}
       <div className='position-relative'>
-        <Link to='/orders' className='position-absolute start-0'>
-          &larr; Quay lại
-        </Link>
-        <h3 className='text-end d-block me-auto ms-auto text-sm-end text-md-center text-lg-center text-xl-center'>
-          CHI TIẾT ĐƠN HÀNG #{id.toUpperCase()}
-        </h3>
+        <div className='page-header'>
+          <div className='header__title'>
+            <h1>CHI TIẾT ĐƠN HÀNG #{id.toUpperCase()}</h1>
+          </div>
+          <div className='header__go-back-button'>
+            <Link to='/orders'>
+              <button className='header-button'></button>
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Content */}

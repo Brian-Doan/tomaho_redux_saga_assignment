@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 
 const DanhSachDonHang = () => {
   const tableHeader = [
@@ -15,8 +15,12 @@ const DanhSachDonHang = () => {
   const donHang = useSelector((state) => state.DonHangReducer.donHang);
 
   return (
-    <div className='border-top pt-2'>
-      <h3>DANH SÁCH ĐƠN HÀNG</h3>
+    <div className='pt-2 table-wrapper'>
+      <div className='page-header'>
+        <div className='header__title'>
+          <h1>DANH SÁCH ĐƠN HÀNG</h1>
+        </div>
+      </div>
 
       <Table striped bordered hover>
         <thead>
@@ -49,6 +53,10 @@ const DanhSachDonHang = () => {
           )}
         </tbody>
       </Table>
+
+      <Link to='/products'>
+        <Button className='float-end'>VỀ TRANG SẢN PHẨM</Button>
+      </Link>
     </div>
   );
 };

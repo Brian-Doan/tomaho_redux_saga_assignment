@@ -1,19 +1,31 @@
-import { takeLeading, put } from 'redux-saga/effects';
+import { takeLeading, put, select } from 'redux-saga/effects';
+
 import * as SanPhamActions from './SanPhamActionTypes';
 
+const sanPhamStorageKey = 'SAN_PHAM_LOCAL_STORAGE_KEY';
+
 export function* SanPhamWatcher() {
-  yield takeLeading(SanPhamActions.CREATE_NEW_SAN_PHAM, workerCreateNewSanPham);
+  yield takeLeading(SanPhamActions.GET_NEW_SAN_PHAM, workerGetNewSanPham);
 }
 
-function* workerCreateNewSanPham(action) {
+function* workerGetNewSanPham(action) {
   try {
+    const sanPham = yield select((state) => state.SanPhamReducer.sanPham);
+
+    // console.group('workerGetNewSanPham');
+    // console.log('I run inside workerGetNewSanPham');
+    // console.log('action :', action);
+    // console.log('sanPham inside workerGetNewSanPham :', sanPham);
+    // console.groupEnd();
+
+    sanPham.unshift(action.payload);
+    localStorage.setItem(sanPhamStorageKey, JSON.stringify(sanPham));
+
     yield put({
-      type: action,
+      type: SanPhamActions.CREATE_NEW_SAN_PHAM,
+      payload: sanPham,
     });
-    console.log(
-      'Action CREATE_NEW_SAN_PHAM is triggered by workerCreateNewSanPham'
-    );
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
   }
 }

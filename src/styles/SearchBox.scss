@@ -1,0 +1,142 @@
+.search {
+  position: relative;
+
+  .search__box {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+
+    input {
+      width: 130px;
+      line-height: 3.8rem;
+      font-size: 1.3rem;
+      padding: 0 25px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      outline: none;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+
+      &[type='text']:focus {
+        width: 130px;
+      }
+    }
+
+    .search__clear {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .search__result {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 10px;
+    box-shadow: -1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -30px;
+    height: 0;
+    width: 200px;
+    overflow-y: scroll;
+    transition: height 0.5s ease-in-out;
+    animation: fadeInFromTop 0.5s ease-in-out forwards;
+
+    .search__result-header {
+      text-align: left;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+
+      .search__result-img {
+        width: 50px;
+        object-fit: cover;
+      }
+
+      p {
+        text-align: left;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      margin-top: 10px;
+      margin-top: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #f16522;
+      border-radius: 999px;
+    }
+
+    @keyframes fadeInFromTop {
+      from {
+        height: 0;
+      }
+      to {
+        height: 240px;
+      }
+    }
+  }
+
+  .search__result-empty {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .search__box {
+      input {
+        &[type='text']:focus {
+          width: 150px;
+        }
+      }
+    }
+
+    .search__result {
+      right: -20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .search__box {
+      input {
+        &[type='text']:focus {
+          width: 180px;
+        }
+      }
+    }
+
+    .search__result {
+      right: -10px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .search__box {
+      input {
+        &[type='text']:focus {
+          width: 300px;
+        }
+      }
+    }
+  }
+}

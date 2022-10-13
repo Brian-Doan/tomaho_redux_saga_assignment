@@ -9,39 +9,13 @@ const initialState = {
 const DongDonHangReducer = (state = initialState, action) => {
   switch (action.type) {
     case DongDonHangActions.CREATE_NEW_DONG_DON_HANG:
-      const { idDonHang, cartItemTrueQuantity } = action.payload;
-
-      let dongDonHangData = [...cartItemTrueQuantity];
-
-      // Sửa lại dữ liệu
-      dongDonHangData = dongDonHangData.map((item) => {
-        return {
-          ...item,
-          sanPham: {
-            id: item.sanPham.id,
-            ten: item.sanPham.ten,
-            thue: item.sanPham.thue,
-          },
-        };
-      });
-
-      dongDonHangData = dongDonHangData.map((item) => {
-        return {
-          ...item,
-          idDonHang,
-          tongTruocThue: parseInt(item.donGia) * parseInt(item.soLuong),
-          tongThue: item.sanPham.thue * parseInt(item.soLuong),
-        };
-      });
-
-      localStorage.setItem(
-        dongDonHangStorageKey,
-        JSON.stringify([...state.dongDonHang, ...dongDonHangData])
-      );
+      // console.group('DongDonHangReducer');
+      // console.log('payload inside DongDonHangReducer: ', action.payload);
+      // console.groupEnd();
 
       return {
         ...state,
-        dongDonHang: [...state.dongDonHang, ...dongDonHangData],
+        dongDonHang: [...state.dongDonHang, ...action.payload],
       };
     default:
       return state;

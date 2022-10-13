@@ -9,18 +9,23 @@ const initialState = {
 const MyCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case MyCartActions.ADD_TO_CART:
+      // console.group('MyCartReducer');
+      // console.log('I run inside MyCartReducer');
+      // console.log('payload inside MyCartReducer :', action.payload);
+      // console.groupEnd();
+
       return {
         ...state,
         myCart: [...state.myCart, action.payload],
       };
     case MyCartActions.CLEAR_CART:
-      console.log('Action CLEAR_CART is triggered by workerCreateNewDonHang');
-
-      localStorage.setItem(myCartStorageKey, JSON.stringify([]));
+      // console.group('MyCartReducer');
+      // console.log('Action CLEAR_CART is triggered');
+      // console.groupEnd();
 
       return {
         ...state,
-        myCart: [],
+        myCart: action.payload,
       };
     default:
       return state;

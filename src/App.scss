@@ -1,0 +1,186 @@
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* font-size 62.5% = 10px */
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  display: block;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 999px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.btn {
+  font-size: 1.2rem;
+}
+
+.App {
+  text-align: center;
+  padding: 0 200px;
+
+  .scroll-top {
+    background-color: #f16522;
+    z-index: 999;
+    position: fixed;
+    padding: 5px;
+    right: 30px;
+    bottom: 30px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      fill: #fff;
+    }
+
+    &:hover {
+      animation: bounce 0.5s ease-in-out alternate infinite;
+
+      @keyframes bounce {
+        from {
+          bottom: 30px;
+        }
+        to {
+          bottom: 33px;
+        }
+      }
+    }
+  }
+
+  .header-button {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+
+  .main-content {
+    margin-top: 100px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .table-wrapper {
+    flex: 1;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+
+  /* Extra small devices */
+  @media screen and (max-width: 576px) {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .page-title {
+      font-size: 1.1rem;
+    }
+
+    .table-wrapper {
+      max-width: 90%;
+    }
+  }
+
+  /* Small devices */
+  @media screen and (min-width: 576px) {
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .table-wrapper {
+      max-width: 90%;
+    }
+  }
+
+  /* Medium devices */
+  @media screen and (min-width: 768px) {
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .table-wrapper {
+      max-width: 90%;
+    }
+
+    .header-button {
+      border-radius: 999px;
+      width: 120px;
+      height: 30px;
+    }
+  }
+
+  /* Large devices */
+  @media screen and (min-width: 992px) {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    .page-title {
+      font-size: 1.6rem;
+      text-align: left;
+    }
+
+    .table-wrapper {
+      max-width: 80%;
+    }
+  }
+
+  /* Extra large devices */
+  @media screen and (min-width: 1200px) {
+    padding-left: 150px;
+    padding-right: 150px;
+
+    .page-title {
+      font-size: 1.8rem;
+      text-align: left;
+    }
+
+    .table-wrapper {
+      max-width: 80%;
+    }
+  }
+
+  /* Extra extra large devices */
+  @media screen and (min-width: 1400px) {
+    padding-left: 200px;
+    padding-right: 200px;
+
+    .page-title {
+      font-size: 2rem;
+      text-align: left;
+    }
+
+    .table-wrapper {
+      max-width: 80%;
+    }
+  }
+}
+
+

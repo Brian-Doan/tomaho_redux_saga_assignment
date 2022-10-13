@@ -8,14 +8,17 @@ const initialState = {
 
 const SanPhamReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SanPhamActions.GET_NEW_SAN_PHAM:
+      return { ...state };
     case SanPhamActions.CREATE_NEW_SAN_PHAM:
-      const copyOfSanPham = [...state.sanPham];
-
-      copyOfSanPham.splice(0, 0, action.payload);
+      // console.group('SanPhamReducer');
+      // console.log('state inside SanPhamReducer:', state);
+      // console.log('payload inside SanPhamReducer:', action.payload);
+      // console.groupEnd();
 
       return {
         ...state,
-        sanPham: copyOfSanPham,
+        sanPham: action.payload,
       };
     default:
       return state;

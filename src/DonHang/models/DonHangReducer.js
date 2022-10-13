@@ -8,6 +8,8 @@ const initialState = {
 
 const DonHangReducer = (state = initialState, action) => {
   switch (action.type) {
+    case DonHangActions.GET_NEW_DON_HANG:
+      return { ...state };
     case DonHangActions.CREATE_NEW_DON_HANG:
       return {
         ...state,
