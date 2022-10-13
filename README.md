@@ -24,4 +24,4 @@ Trong thư mục dự án, dùng lệnh **npm start** để chạy ứng dụng.
 
 ## `Github`
 
-Github reposity: [https://github.com/Brian-Doan/tomaho_redux_saga_assignment](https://github.com/Brian-Doan/tomaho_redux_saga_assignment)
+Github repository: [https://github.com/Brian-Doan/tomaho_redux_saga_assignment](https://github.com/Brian-Doan/tomaho_redux_saga_assignment)
